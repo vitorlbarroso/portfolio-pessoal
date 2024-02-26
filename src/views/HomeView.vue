@@ -28,13 +28,38 @@ export default {
                 <img src="@/assets/img/vitor_barroso_dev_icon.svg" alt="Vitor Barroso">
             </figure>
         </section>
+
+        <section id="about-me" class="container">
+            <figure id="infos-about-me-figure">
+                <img src="@/assets/img/vitor_barroso_profile.svg" alt="Vitor Barroso">
+            </figure>
+
+            <article id="infos-about-me">
+                <h3>Quem sou</h3>
+                <h2>Vitor Barroso</h2>
+                <h4>Desenvolvedor Full Stack Pleno</h4>
+
+                <p>
+                    Apaixonado por tecnologias desde criança, comecei a programar com apenas 11 anos, na linguagem Java. Apesar de ser fissurado por tecnologias, ingressei no mercado de trabalho na área de T.I. Em 2020.
+                </p>
+
+                <p>
+                    Nesse meio tempo, adquiri vasta experiência com desenvolvimento Front-end, Back-end, técnicas de UI e UX, Design e DevOps.
+                </p>
+
+                <p>
+                    Atualmente, trabalhando com as tecnologias Vue.js, .Net 6 e Laravel. Possuo a versatilidade de trabalhar com qualquer tecnologia que seja necessária para a execução do trabalho.
+                </p>
+            </article>
+        </section>
     </div>
 </template>
 
 <style scoped>
+    /* Header */
     header {
         width: 100%;
-        height: 60px;
+        height: 90px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -53,12 +78,14 @@ export default {
         -webkit-text-fill-color: transparent;
     }
 
+    /* Apresentação pessoal */
     #personal-presentation {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
         height: auto;
+        margin-top: -30px;
     }
 
     #infos-personal-presentation h1 {
@@ -83,7 +110,59 @@ export default {
         margin-bottom: 30px;
     }
 
+    /* Sobre mim */
+    #about-me {
+        width: 100%;
+        height: auto;
+        background-color: var(--secondary-bg);
+        border: 1px solid var(--tertiary-border);
+        border-radius: 10px;
+        margin: 50px 0px;
+        padding: 20px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    #infos-about-me-figure img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    #infos-about-me {
+        max-width: 70%;
+        padding: 10px 20px;
+    }
+
+    #infos-about-me h3 {
+        font-size: 18px;
+        font-weight: 600;
+        background: var(--primary-text-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    #infos-about-me h2 {
+        font-size: 26px;
+        margin: 6px 0px;
+        color: var(--color-white);
+    }
+
+    #infos-about-me h4 {
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--color-white);
+    }
+
+    #infos-about-me p {
+        color: var(--tertiary-text);
+        margin-top: 15px;
+        line-height: 20px;
+    }
+
+    /* Mobile */
     @media screen and (max-width:1010px) {
+        /* Apresentação pessoal */
         #personal-presentation {
             margin-top: 20px;
         }
@@ -101,9 +180,35 @@ export default {
         #infos-personal-figure {
             display: none;
         }
+
+        /* Sobre mim */
+        #about-me {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #infos-about-me-figure {
+            width: 100%;
+        }
+
+        #infos-about-me {
+            max-width: 100%;
+            padding: 10px 10px;
+        }
+
+        #infos-about-me h3 {
+            font-size: 18px;
+        }
+
+        #infos-about-me h2 {
+            font-size: 28px;
+        }
     }
 
     @media screen and (max-width:510px) {
+        /* Apresentação pessoal */
         #infos-personal-presentation h1 {
             font-size: 42px;
         }
