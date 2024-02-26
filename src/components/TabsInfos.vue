@@ -92,7 +92,7 @@ export default {
         cursor: pointer;
         padding: 14px 24px;
         border-left: 3px solid transparent;
-        background-color: var(--secondary-bg);
+        background-color: var(--primary-bg);
         font-weight: 500;
     }
 

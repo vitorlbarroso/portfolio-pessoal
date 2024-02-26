@@ -102,6 +102,14 @@ header .link:hover {
     line-height: 20px;
 }
 
+#work-experiences {
+    width: 100vw;
+    background-color: var(--secondary-bg);
+    position: relative;
+    margin-left: -50px;
+    padding: 70px 0px 70px 50px;
+}
+
 #work-experiences h1 {
     font-size: 28px;
     color: var(--color-white);
@@ -125,6 +133,13 @@ header .link:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     grid-gap: 20px;
+}
+
+/* Widescreen */
+@media screen and (min-width:1430px) {
+    #work-experiences {
+        padding-left: 0px;
+    }
 }
 
 /* Tablet */
@@ -175,15 +190,28 @@ header .link:hover {
 }
 
 /* Mobile 1 */
+@media screen and (max-width: 850px) {
+    #work-experiences {
+        padding-right: 50px;
+    }
+}
+
+/* Mobile 2 */
 @media screen and (max-width: 650px) {
     #projects-list {
         display: flex;
         align-items: center;
         flex-direction: column;
     }
+
+    #work-experiences {
+        width: auto;
+        padding-right: 10px;
+        padding-left: 50px;
+    }
 }
 
-/* Mobile 2 */
+/* Mobile 3 */
 @media screen and (max-width:510px) {
     /* Apresentação pessoal */
     #infos-personal-presentation h1 {
