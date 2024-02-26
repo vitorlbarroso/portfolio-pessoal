@@ -23,6 +23,8 @@ export default {
                         "PHP",
                         "Laravel",
                         "AWS",
+                        "UI/UX",
+                        "Figma",
                         "Metodologias Agile",
                         "Jira",
                     ]
@@ -48,8 +50,8 @@ export default {
                 },
                 "HZZ Devs": {
                     positionAtWork: "Desenvolvedor Back-end",
-                    startedIn: "01/01/2022",
-                    finishedIn: "01/10/2023",
+                    startedIn: "01/04/2021",
+                    finishedIn: "01/12/2021",
                     description: "Trabalhei arquitetando e desenvolvendo projetos para uma plataforma da Rockstar Games (FiveM, onde tive grandes desafios com empresários e investidores do setor, trazendo soluções inovadoras e lucrativas para seus negócios.",
                     skills: [
                         "Lua",
