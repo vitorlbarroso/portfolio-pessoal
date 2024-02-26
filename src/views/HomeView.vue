@@ -1,6 +1,7 @@
 <script>
 import Button from "@/components/Button.vue";
 import TabsInfos from "@/components/TabsInfos.vue";
+import ProjectCard from "@/components/ProjectCard.vue";
 
 export default {
     data() {
@@ -91,10 +92,61 @@ export default {
                         "Varejo",
                     ]
                 },
-            }
+            },
+            projects: [
+                {
+                    imageLink: "https://cdn.discordapp.com/attachments/890042596112601120/1211762849496694834/p_fp.png?ex=65ef6118&is=65dcec18&hm=c4f77e73277769f019c563ef11ec57a74e2f06e836ec567e57dedc5a1050abc9&",
+                    title: "Flame Pay",
+                    positionAtProject: "Líder de Equipe",
+                    description: "Nesse projeto, fui responsável pela contratação de novos desenvolvedores, planejamento de tarefas através de metodologias ágeis e o líder da equipe de desenvolvimento.",
+                    projectLink: "https://flamepay.com.br",
+                },
+                {
+                    imageLink: "https://cdn.discordapp.com/attachments/890042596112601120/1211762849802625104/p_vp.png?ex=65ef6118&is=65dcec18&hm=bf8cc1e9798e7b8312b06ebe5b840108fadb9b1805afb29a5a12f9f92e907b54&",
+                    title: "Vídeo Player",
+                    positionAtProject: "Desenvolvedor e Arquiteto",
+                    description: "Desenvolvi e arquitetei toda a estrutura do vídeo player. Utilizei Javascript para a criação do Player e Buckets S3, Lambda Func. e o serviço AWS MediaConvert para armazenar e converter os vídeos.",
+                    projectLink: null,
+                },
+                {
+                    imageLink: "https://cdn.discordapp.com/attachments/890042596112601120/1211762850263994489/p_jm.png?ex=65ef6118&is=65dcec18&hm=b1a4dfcdc93badde1566f93d4d1f5df725112553353b18def1ab246ee9b49c71&",
+                    title: "Jump Mario",
+                    positionAtProject: "Desenvolvedor",
+                    description: "Desenvolvi um game utilizando Javascript. Esse game é um réplica do famoso “Joguinho do Dinossauro”, porém, adaptado ao tema do Super Mário.",
+                    projectLink: "https://mario-jump-vitorlbarroso.netlify.app/",
+                },
+                {
+                    imageLink: "https://cdn.discordapp.com/attachments/890042596112601120/1211762850666782730/p_hb.png?ex=65ef6119&is=65dcec19&hm=b0e2d63a5b0d133b4fb0f94a4b38de9ba295f2a1de10028c246ce2b45f464d60&",
+                    title: "Hit Biz",
+                    positionAtProject: "UI/UX Designer",
+                    description: "Apliquei técnicas de Design e Experiência do usuário para criar uma melhor experiência para os produtores da plataforma.",
+                    projectLink: null,
+                },
+                {
+                    imageLink: "https://cdn.discordapp.com/attachments/890042596112601120/1211762850930884679/p_ps.png?ex=65ef6119&is=65dcec19&hm=4e5a639d60364d0c4b086fadb9a3395af93d1b21391e3da6184cc7eea14604af&",
+                    title: "Pro Seller",
+                    positionAtProject: "Desenvolvedor e Arquiteto",
+                    description: "Desenvolvi e arquitetei um sistema voltado para a criação de Landing Pages através de um Page Builder (Estilo WordPress). Nesse projeto, utilizei o Vue.JS, .NET Core 6 e Serviços AWS.",
+                    projectLink: null,
+                },
+                {
+                    imageLink: "https://cdn.discordapp.com/attachments/890042596112601120/1211768380218937354/p_pp.png?ex=65ef663f&is=65dcf13f&hm=cb16a9547df02e59d15269d7f5af62131d84f677836e8d5c33f13b26361ba83e&",
+                    title: "PicPay + PHP",
+                    positionAtProject: "Desenvolvedor",
+                    description: "Desenvolvi uma biblioteca de adaptação da API do PicPay com o PHP, a fim de facilitar a integração da aplicação para pessoas que queiram vender através da internet.",
+                    projectLink: "https://github.com/vitorlbarroso/api-php-picpay",
+                },
+                {
+                    imageLink: "https://cdn.discordapp.com/attachments/890042596112601120/1211762849169412096/p_el.png?ex=65ef6118&is=65dcec18&hm=fce1a64f4998006e1e5876d9a0727e1753f117bf1ec8baae0a13b0f809386037&",
+                    title: "Essa Loja",
+                    positionAtProject: "Desenvolvedor FullStack",
+                    description: "Loja desenvolvida utilizando Vue.JS e Laravel. Integrei a essa plataforma, sistema de vendas completo, sistema de envio e rastreio de pacotes via Correios e Melhor Envio",
+                    projectLink: null,
+                },
+            ],
         }
     },
-    components: { Button, TabsInfos },
+    components: { Button, TabsInfos, ProjectCard },
 }
 </script>
 
@@ -151,177 +203,15 @@ export default {
                 <TabsInfos :data="workingExperiencesList" />
             </section>
         </section>
+
+        <section id="projects" class="container">
+            <h1>Projetos</h1>
+            
+            <section id="projects-list">
+                <ProjectCard v-for="(project, index) in projects" :data="project" />
+            </section>
+        </section>
     </div>
 </template>
 
-<style scoped>
-    /* Header */
-    header {
-        width: 100%;
-        height: 90px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    header .link {
-        margin: 0px 10px;
-        font-size: 16px;
-        font-weight: 500;
-        color: var(--color-white);
-    }
-
-    header .link:hover {
-        background: var(--primary-text-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    /* Apresentação pessoal */
-    #personal-presentation {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        height: auto;
-        margin-top: -30px;
-    }
-
-    #infos-personal-presentation h1 {
-        font-size: 50px;
-        font-weight: bold;
-        background: var(--primary-text-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    #infos-personal-presentation h2 {
-        font-size: 32px;
-        color: white;
-        font-weight: 400;
-        margin: 15px 0px;
-    }
-
-    #infos-personal-presentation p {
-        color: var(--color-gray);
-        font-size: 18px;
-        max-width: 700px;
-        margin-bottom: 30px;
-    }
-
-    /* Sobre mim */
-    #about-me {
-        width: 100%;
-        height: auto;
-        background-color: var(--secondary-bg);
-        border: 1px solid var(--tertiary-border);
-        border-radius: 10px;
-        margin: 50px auto;
-        padding: 20px;
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-    }
-
-    #infos-about-me-figure img {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    #infos-about-me {
-        max-width: 70%;
-        padding: 10px 20px;
-    }
-
-    #infos-about-me h3 {
-        font-size: 18px;
-        font-weight: 600;
-        background: var(--primary-text-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    #infos-about-me h2 {
-        font-size: 26px;
-        margin: 6px 0px;
-        color: var(--color-white);
-    }
-
-    #infos-about-me h4 {
-        font-size: 18px;
-        font-weight: 400;
-        color: var(--color-white);
-    }
-
-    #infos-about-me p {
-        color: var(--tertiary-text);
-        margin-top: 15px;
-        line-height: 20px;
-    }
-
-    #work-experiences h1 {
-        font-size: 28px;
-        color: var(--color-white);
-        font-weight: 600;
-        margin-bottom: 20px;
-    }
-
-    /* Tablet */
-    @media screen and (max-width:1010px) {
-        /* Apresentação pessoal */
-        #personal-presentation {
-            margin-top: 20px;
-        }
-
-        #infos-personal-presentation {
-            width: 100%;
-            justify-content: center;
-            text-align: center;
-        }
-
-        #infos-personal-presentation p {
-            margin: 0px auto 30px auto;
-        }
-
-        #infos-personal-figure {
-            display: none;
-        }
-
-        /* Sobre mim */
-        #about-me {
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        #infos-about-me-figure {
-            width: 100%;
-        }
-
-        #infos-about-me {
-            max-width: 100%;
-            padding: 10px 10px;
-        }
-
-        #infos-about-me h3 {
-            font-size: 18px;
-        }
-
-        #infos-about-me h2 {
-            font-size: 28px;
-        }
-    }
-
-    /* Mobile */
-    @media screen and (max-width:510px) {
-        /* Apresentação pessoal */
-        #infos-personal-presentation h1 {
-            font-size: 42px;
-        }
-
-        #infos-personal-presentation h2 {
-            font-size: 26px;
-        }
-    }
-</style>
+<style src="@/assets/css/home-style.css" scoped></style>

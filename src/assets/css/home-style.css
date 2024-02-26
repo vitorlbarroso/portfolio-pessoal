@@ -1,0 +1,196 @@
+/* Header */
+header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .link {
+    margin: 0px 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-white);
+}
+
+header .link:hover {
+    background: var(--primary-text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Apresentação pessoal */
+#personal-presentation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin-top: -30px;
+}
+
+#infos-personal-presentation h1 {
+    font-size: 50px;
+    font-weight: bold;
+    background: var(--primary-text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#infos-personal-presentation h2 {
+    font-size: 32px;
+    color: white;
+    font-weight: 400;
+    margin: 15px 0px;
+}
+
+#infos-personal-presentation p {
+    color: var(--color-gray);
+    font-size: 18px;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+/* Sobre mim */
+#about-me {
+    width: 100%;
+    height: auto;
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--tertiary-border);
+    border-radius: 10px;
+    margin: 60px auto;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+#infos-about-me-figure img {
+    width: 100%;
+    max-width: 400px;
+}
+
+#infos-about-me {
+    max-width: 70%;
+    padding: 10px 20px;
+}
+
+#infos-about-me h3 {
+    font-size: 18px;
+    font-weight: 600;
+    background: var(--primary-text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#infos-about-me h2 {
+    font-size: 26px;
+    margin: 6px 0px;
+    color: var(--color-white);
+}
+
+#infos-about-me h4 {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-white);
+}
+
+#infos-about-me p {
+    color: var(--tertiary-text);
+    margin-top: 15px;
+    line-height: 20px;
+}
+
+#work-experiences h1 {
+    font-size: 28px;
+    color: var(--color-white);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#projects {
+    margin: 60px auto 60px auto;
+    width: 100%;
+}
+
+#projects h1 {
+    font-size: 28px;
+    color: var(--color-white);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-gap: 20px;
+}
+
+/* Tablet */
+@media screen and (max-width:1010px) {
+    /* Apresentação pessoal */
+    #personal-presentation {
+        margin-top: 20px;
+    }
+
+    #infos-personal-presentation {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #infos-personal-presentation p {
+        margin: 0px auto 30px auto;
+    }
+
+    #infos-personal-figure {
+        display: none;
+    }
+
+    /* Sobre mim */
+    #about-me {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    #infos-about-me-figure {
+        width: 100%;
+    }
+
+    #infos-about-me {
+        max-width: 100%;
+        padding: 10px 10px;
+    }
+
+    #infos-about-me h3 {
+        font-size: 18px;
+    }
+
+    #infos-about-me h2 {
+        font-size: 28px;
+    }
+}
+
+/* Mobile 1 */
+@media screen and (max-width: 650px) {
+    #projects-list {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+/* Mobile 2 */
+@media screen and (max-width:510px) {
+    /* Apresentação pessoal */
+    #infos-personal-presentation h1 {
+        font-size: 42px;
+    }
+
+    #infos-personal-presentation h2 {
+        font-size: 26px;
+    }
+}
