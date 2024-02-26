@@ -8,7 +8,7 @@
 :root {
   --primary-bg: #0C0C0C;
   --secondary-bg: #111111;
-  --primary-text-gradient: linear-gradient(90deg, rgba(0,255,133,1) 0%, rgba(0,255,194,1) 100%);
+  --primary-text-gradient: linear-gradient(90deg, rgba(0,255,133,1) 0%, rgba(0,255,194,1) 70%);
   --secondary-text-gradient: linear-gradient(90deg, #848484 0%, #B2B2B2 100%);
   --tertiary-text: #A9A9A9;
   --primary-border-gradient: radial-gradient(circle at 100% 100%, #0C0C0C 0, #0C0C0C 6px, transparent 6px) 0% 0%/8px 8px no-repeat,
@@ -29,6 +29,7 @@
   --color-white: #FFF;
   --color-gray: #C4C4C4;
   --color-dark: #0C0C0C;
+  --color-green: #00FF85;
 }
 
 #app {
@@ -48,6 +49,7 @@
 body {
   background-color: var(--primary-bg);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 a {
@@ -57,6 +59,19 @@ a {
 .container {
   max-width: 1380px;
   margin: 0 auto;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--primary-text-gradient);
+  border-radius: 20px;
 }
 
 @media screen and (max-width:640px) {

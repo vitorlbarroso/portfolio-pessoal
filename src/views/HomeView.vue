@@ -1,8 +1,98 @@
 <script>
 import Button from "@/components/Button.vue";
+import TabsInfos from "@/components/TabsInfos.vue";
 
 export default {
-    components: { Button },
+    data() {
+        return {
+            workingExperiencesList: {
+                "Pepper": {
+                    positionAtWork: "Desenvolvedor Full Stack",
+                    startedIn: "01/09/2022",
+                    finishedIn: "01/02/2024",
+                    description: "Durante esse período na Pepper, fui responsável pelo desenvolvimento e manutenção de novas plataformas públicas e internas da empresa. Um dos projetos de maior destaque, onde fui o principal desenvolvedor front-end e back-end, possui hoje, mais de 1 milhão de usuário e uma média de 300 mil usuários ativos/mês.",
+                    skills: [
+                        "HTML5",
+                        "CSS3",
+                        "TailwindCSS",
+                        "Vue.js",
+                        "C#",
+                        ".NET Core",
+                        "Entity Framework",
+                        "LINQ",
+                        "PHP",
+                        "Laravel",
+                        "AWS",
+                        "Metodologias Agile",
+                        "Jira",
+                    ]
+                },
+                "Cometa Code": {
+                    positionAtWork: "Desenvolvedor Full Stack",
+                    startedIn: "01/01/2022",
+                    finishedIn: "01/10/2023",
+                    description: "Fui responsável por liderar projetos para empresas de pequeno e médio porte, além de ter sido o responsável pelo desenvolvimento de sistemas web, mobile e desktop.",
+                    skills: [
+                        "HTML5",
+                        "CSS3",
+                        "TailwindCSS",
+                        "Bootstrap",
+                        "JQuery",
+                        "Vue.js",
+                        "PHP",
+                        "Laravel",
+                        "AWS",
+                        "MySQL",
+                        "UI/UX",
+                    ]
+                },
+                "HZZ Devs": {
+                    positionAtWork: "Desenvolvedor Back-end",
+                    startedIn: "01/01/2022",
+                    finishedIn: "01/10/2023",
+                    description: "Trabalhei arquitetando e desenvolvendo projetos para uma plataforma da Rockstar Games (FiveM, onde tive grandes desafios com empresários e investidores do setor, trazendo soluções inovadoras e lucrativas para seus negócios.",
+                    skills: [
+                        "Lua",
+                        "C#",
+                        "vRP 1.0",
+                        "Cfx.re",
+                        "FiveM",
+                        "Natives",
+                    ]
+                },
+                "Space Design": {
+                    positionAtWork: "Designer Gráfico",
+                    startedIn: "01/07/2020",
+                    finishedIn: "01/01/2021",
+                    description: "Trabalhei na formulação e criação de criativos, logos e flyers para empresas, a fim de proporcionar um Marketing mais inteligente e gerar conversão de clientes e vendas.",
+                    skills: [
+                        "Canva",
+                        "Adobe Photoshop",
+                        "Mídias Sociais",
+                        "Adobe Illustrator",
+                        "Marketing Digital",
+                        "Design Gráfico",
+                        "Meta ADS",
+                    ]
+                },
+                "Verde Sião Agrop.": {
+                    positionAtWork: "Vendedor",
+                    startedIn: "01/10/2017",
+                    finishedIn: "01/10/2020",
+                    description: "Vendedor, assistente geral e designer gráfico, atuei auxiliando no sistema de gestão da empresa, prestando atendimentos, vendas e criando artes para as mídias sociais da empresa.",
+                    skills: [
+                        "Adobe Photoshop",
+                        "Atendimento ao cliente",
+                        "Banco de dados relacional",
+                        "Sistemas PDV",
+                        "Vendas",
+                        "Varejo",
+                    ]
+                },
+            }
+        }
+    },
+    components: { Button, TabsInfos },
 }
 </script>
 
@@ -51,6 +141,13 @@ export default {
                     Atualmente, trabalhando com as tecnologias Vue.js, .Net 6 e Laravel. Possuo a versatilidade de trabalhar com qualquer tecnologia que seja necessária para a execução do trabalho.
                 </p>
             </article>
+        </section>
+
+        <section id="work-experiences">
+            <section class="container">
+                <h1>Experiências</h1>
+                <TabsInfos :data="workingExperiencesList" />
+            </section>
         </section>
     </div>
 </template>
@@ -117,7 +214,7 @@ export default {
         background-color: var(--secondary-bg);
         border: 1px solid var(--tertiary-border);
         border-radius: 10px;
-        margin: 50px 0px;
+        margin: 50px auto;
         padding: 20px;
         display: flex;
         align-items: flex-start;
@@ -160,7 +257,14 @@ export default {
         line-height: 20px;
     }
 
-    /* Mobile */
+    #work-experiences h1 {
+        font-size: 28px;
+        color: var(--color-white);
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    /* Tablet */
     @media screen and (max-width:1010px) {
         /* Apresentação pessoal */
         #personal-presentation {
@@ -207,6 +311,7 @@ export default {
         }
     }
 
+    /* Mobile */
     @media screen and (max-width:510px) {
         /* Apresentação pessoal */
         #infos-personal-presentation h1 {
