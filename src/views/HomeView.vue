@@ -2,6 +2,9 @@
 import Button from "@/components/Button.vue";
 import TabsInfos from "@/components/TabsInfos.vue";
 import ProjectCard from "@/components/ProjectCard.vue";
+import HoverExperiences from "@/components/HoverExperiences.vue";
+import Footer from "@/components/Footer.vue";
+import ModalError from "@/components/ModalError.vue";
 
 export default {
     data() {
@@ -144,17 +147,83 @@ export default {
                     projectLink: null,
                 },
             ],
+            languagesExperiences: [
+                {
+                    languageName: "HTML5",
+                    imageLink: "https://cdn.discordapp.com/attachments/890042596112601120/1212079026940682260/html5.png?ex=65f0878f&is=65de128f&hm=2967471e1023ce0239d35e2c29d19f43fc90cba840654580f1032b65bf1c9da5&",
+                    description: "HTML é uma linguagem de marcação usada para criar e estruturar páginas da web. Composta por elementos e tags, HTML permite a formatação de texto, incorporação de imagens, links e outros recursos multimídia. É a espinha dorsal da web, fornecendo a base para a criação e exibição de conteúdo na internet, sendo interpretada pelos navegadores para apresentar informações de maneira visualmente coerente aos usuários.",
+                },
+                {
+                    languageName: "CSS3",
+                    imageLink: "https://cdn.discordapp.com/attachments/890042596112601120/1212081034791886850/css.png?ex=65f0896e&is=65de146e&hm=66110f754b0c8034bd7ddfd79e667151fb137e8edcbcfdc25a5c73e996f42b7b&",
+                    description: "CSS é uma linguagem de estilo utilizada para controlar a apresentação visual de páginas da web, separando o conteúdo estrutural (HTML) da sua aparência. Com recursos avançados como seletores, propriedades e valores, o CSS3 permite definir cores, fontes, espaçamento, layout e outros aspectos visuais de forma flexível e eficiente. Ele possibilita a criação de designs atrativos, responsivos e acessíveis, melhorando a experiência do usuário na navegação pela web.",
+                },
+                {
+                    languageName: "Javascript",
+                    imageLink: "https://cdn.discordapp.com/attachments/890042596112601120/1212081036289122374/js.png?ex=65f0896e&is=65de146e&hm=7a41e18d48d4607a41de8d76bd5cb6dddc5d274ba32fd1f46f558fd5b96b82ab&",
+                    description: "JavaScript é uma linguagem de programação amplamente utilizada para criar interatividade em páginas da web. Como uma linguagem de script do lado do cliente, ela permite manipular o conteúdo HTML e CSS, responder a eventos do usuário e interagir com serviços web, tornando as páginas mais dinâmicas e funcionais.",
+                },
+                {
+                    languageName: "Vue.js",
+                    imageLink: "https://cdn.discordapp.com/attachments/890042596112601120/1212081044317012008/vue.png?ex=65f08970&is=65de1470&hm=6454518cd2c86f6edd85d0c7a3322003ef253a1314361397045f9b2282181f9b&",
+                    description: "Vue.js é um framework progressivo de JavaScript utilizado para construir interfaces de usuário interativas e reativas. Com uma sintaxe simples e flexível, Vue.js simplifica o desenvolvimento front-end, facilitando a criação de componentes reutilizáveis, gerenciamento de estado e integração com outras bibliotecas e ferramentas.",
+                },
+                {
+                    languageName: "Bootstrap",
+                    imageLink: "https://cdn.discordapp.com/attachments/890042596112601120/1212081034489757786/bs.png?ex=65f0896d&is=65de146d&hm=c25f65f95148c67b30533b46ad39e7ef39ddd1711e2a81c95a1c9432aa7518fa&",
+                    description: "Bootstrap é um framework front-end de código aberto utilizado para desenvolver rapidamente interfaces web responsivas e estilizadas. Com uma coleção de componentes e estilos pré-definidos, Bootstrap simplifica o processo de design, garantindo consistência visual e compatibilidade com diversos dispositivos e navegadores.",
+                },
+                {
+                    languageName: "TailwindCSS",
+                    imageLink: "https://cdn.discordapp.com/attachments/890042596112601120/1212081044946161674/tailwindcss.png?ex=65f08970&is=65de1470&hm=af50917a69154ec7a69ccd3b1a72180d5e5edbba7870c782fe72824e1cdb7916&",
+                    description: "Tailwind CSS é uma biblioteca de classes CSS utilitárias que permite criar designs personalizados de forma rápida e eficiente. Em vez de fornecer componentes pré-estilizados, o Tailwind CSS fornece uma abordagem mais granular, permitindo estilizar elementos diretamente no HTML com classes específicas, oferecendo maior flexibilidade e controle sobre o design.",
+                },
+                {
+                    languageName: "Laravel",
+                    imageLink: "https://cdn.discordapp.com/attachments/890042596112601120/1212081033990897684/laravel.png?ex=65f0896d&is=65de146d&hm=f0bc452a6482c4697a23bed424441621a221e2a64bad91eb78141e31c33c2bd9&",
+                    description: "Laravel é um framework de desenvolvimento web em PHP que oferece uma estrutura robusta e elegante para construir aplicativos web modernos e escaláveis. Com recursos como Eloquent ORM, Blade templating engine e Laravel Mix, Laravel simplifica tarefas comuns de desenvolvimento, promovendo uma experiência de programação agradável e produtiva.",
+                },
+                {
+                    languageName: ".NET Core",
+                    imageLink: "https://cdn.discordapp.com/attachments/890042596112601120/1212081035123101746/dotnet.png?ex=65f0896e&is=65de146e&hm=d85af29292faf1be5b44a563db164bd4a42bda82793cf537ab7a9c4ac009b313&",
+                    description: ".NET Core é uma plataforma de desenvolvimento open-source da Microsoft utilizada para criar aplicativos modernos e escaláveis para web, desktop e dispositivos móveis. Com suporte multiplataforma e uma vasta biblioteca de APIs, o .NET Core oferece desempenho e flexibilidade, permitindo aos desenvolvedores construir e implantar aplicativos em diferentes ambientes de hospedagem.",
+                },
+                {
+                    languageName: "AWS",
+                    imageLink: "https://cdn.discordapp.com/attachments/890042596112601120/1212081034250948618/aws.png?ex=65f0896d&is=65de146d&hm=8c54888e84029329697dd6a394336013fdf51b2f06286b2896cfc4cb48e91301&",
+                    description: "AWS é uma plataforma de serviços de computação em nuvem fornecida pela Amazon. Oferecendo uma ampla gama de serviços, como computação, armazenamento, banco de dados, machine learning e muito mais, a AWS permite as empresas escalar e gerenciar recursos de forma flexível, segura e econômica, impulsionando a inovação e o crescimento digital.",
+                },
+            ],
+            modalError: {
+                isOpened: false,
+                title: "",
+                description: "",
+            },
         }
     },
-    components: { Button, TabsInfos, ProjectCard },
+    methods: {
+        openModalError(title, description) {
+            this.modalError.title = title;
+            this.modalError.description = description;
+            this.modalError.isOpened = true;
+        },
+        closeModalError() {
+            this.modalError.isOpened = false;
+            this.modalError.title = "";
+            this.modalError.description = "";
+        },
+    },
+    components: { Button, TabsInfos, ProjectCard, HoverExperiences, Footer, ModalError },
 }
 </script>
 
 <template>
     <div>
+        <ModalError v-if="modalError.isOpened" @closeModal="closeModalError" :data="modalError" />
+
         <header>
             <router-link class="link" to="">Contato</router-link>
-            <router-link class="link" to="">Blog</router-link>
+            <router-link class="link" to="" @click="openModalError('EM BREVE!', 'Em breve disponibilizaremos nosso DevBlog com diversos conteúdos exclusivos sobre tecnologia. Fique ligado!')">Blog</router-link>
         </header>
 
         <section id="personal-presentation" class="container">
@@ -208,9 +277,19 @@ export default {
             <h1>Projetos</h1>
             
             <section id="projects-list">
-                <ProjectCard v-for="(project, index) in projects" :data="project" />
+                <ProjectCard v-for="(project, index) in projects" :data="project" @openModalError="openModalError('INDISPONÍVEL!', 'Infelizmente esse conteúdo não está mais disponível. Entre em contato com o Vitor para mais explicações!')" />
             </section>
         </section>
+
+        <section id="languages-experiences">
+            <section class="container">
+                <h1>Conhecimentos</h1>
+                
+                <HoverExperiences :data="languagesExperiences" />
+            </section>
+        </section>
+
+        <Footer />
     </div>
 </template>
 

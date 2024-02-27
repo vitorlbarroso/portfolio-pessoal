@@ -6,9 +6,9 @@ export default {
             required: true
         }
     },
-    data() {
-        return {
-            openErrorCard: false,
+    methods: {
+        openModalError() {
+            this.$emit('openModalError', true);
         }
     }
 }
@@ -30,7 +30,7 @@ export default {
         <a v-if="data.projectLink != null" :href="data.projectLink" target="_blank" class="button-project-card">
             Visitar projeto
         </a>
-        <a v-else @click="openErrorCard = true;" target="_blank" class="button-project-card">
+        <a v-else @click="openModalError" target="_blank" class="button-project-card">
             Visitar projeto
         </a>
     </section>

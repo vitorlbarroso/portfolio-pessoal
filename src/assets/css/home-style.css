@@ -107,6 +107,7 @@ header .link:hover {
     background-color: var(--secondary-bg);
     position: relative;
     margin-left: -50px;
+    margin-top: 70px;
     padding: 70px 0px 70px 50px;
 }
 
@@ -133,6 +134,20 @@ header .link:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     grid-gap: 20px;
+}
+
+#languages-experiences {
+    width: 100vw;
+    padding: 60px 0px 60px 50px;
+    margin-left: -50px;
+    background-color: var(--secondary-bg);
+}
+
+#languages-experiences h1 {
+    font-size: 28px;
+    color: var(--color-white);
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 /* Widescreen */
@@ -205,6 +220,12 @@ header .link:hover {
     }
 
     #work-experiences {
+        width: auto;
+        padding-right: 10px;
+        padding-left: 50px;
+    }
+
+    #languages-experiences {
         width: auto;
         padding-right: 10px;
         padding-left: 50px;
