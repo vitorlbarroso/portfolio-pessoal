@@ -5,6 +5,7 @@ import ProjectCard from "@/components/ProjectCard.vue";
 import HoverExperiences from "@/components/HoverExperiences.vue";
 import Footer from "@/components/Footer.vue";
 import ModalError from "@/components/ModalError.vue";
+import ModalContact from "@/components/ModalContact.vue";
 
 export default {
     data() {
@@ -199,9 +200,37 @@ export default {
                 title: "",
                 description: "",
             },
+            modalContact: {
+                isOpened: false,
+                title: "CONTATO",
+                contacts: [
+                    {
+                        name: "WhatsApp",
+                        link: "https://api.whatsapp.com/send/?phone=%2B5527999971368&text=Ol%C3%A1,%20Vitor.%20Peguei%20o%20seu%20contato%20na%20sua%20p%C3%A1gina%20pessoal.%20Est%C3%A1%20podendo%20falar?&type=phone_number&app_absent=0",
+                    },
+                    {
+                        name: "Instagram",
+                        link: "https://www.instagram.com/vitorlbarroso/",
+                    },
+                    {
+                        name: "LinkedIn",
+                        link: "https://www.linkedin.com/in/vitorlbarroso2004/",
+                    },
+                    {
+                        name: "E-mail",
+                        link: "mailto:vitorlauvresbarroso@gmail.com",
+                    },
+                ]
+            },
         }
     },
     methods: {
+        openModalContact() {
+            this.modalContact.isOpened = true;
+        },
+        closeModalContact() {
+            this.modalContact.isOpened = false;
+        },
         openModalError(title, description) {
             this.modalError.title = title;
             this.modalError.description = description;
@@ -213,16 +242,17 @@ export default {
             this.modalError.description = "";
         },
     },
-    components: { Button, TabsInfos, ProjectCard, HoverExperiences, Footer, ModalError },
+    components: { Button, TabsInfos, ProjectCard, HoverExperiences, Footer, ModalError, ModalContact },
 }
 </script>
 
 <template>
     <div>
         <ModalError v-if="modalError.isOpened" @closeModal="closeModalError" :data="modalError" />
+        <ModalContact v-if="modalContact.isOpened" @closeModal="closeModalContact" :data="modalContact" />
 
         <header>
-            <router-link class="link" to="">Contato</router-link>
+            <router-link class="link" to="" @click="openModalContact">Contato</router-link>
             <router-link class="link" to="" @click="openModalError('EM BREVE!', 'Em breve disponibilizaremos nosso DevBlog com diversos conteúdos exclusivos sobre tecnologia. Fique ligado!')">Blog</router-link>
         </header>
 
@@ -234,7 +264,7 @@ export default {
                 <p>Com experiência em desenvolvimento Front-end, Back-end, UI/UX e DevOps, estou a mais de 4 anos transformando e ajudando empresas a alavancarem seus sistemas através da internet.</p>
 
                 <Button text="Baixar CV" type="gradient"></Button>
-                <Button text="Entrar em contato" type="gray"></Button>
+                <Button text="Entrar em contato" type="gray" @clickButton="openModalContact"></Button>
             </article>
 
             <figure id="infos-personal-figure">

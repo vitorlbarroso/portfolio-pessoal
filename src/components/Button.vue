@@ -9,13 +9,18 @@ export default {
             type: String,
             required: true,
         }
+    },
+    methods: {
+        clickButton() {
+            this.$emit('clickButton', true);
+        }
     }
 }
 </script>
 
 <template>
     <div>
-        <button :class="[type == 'gradient' ? 'gradient' : 'gray', 'button']">
+        <button @click="clickButton" :class="[type == 'gradient' ? 'gradient' : 'gray', 'button']">
             <p>{{ text }}</p>
         </button>
     </div>
