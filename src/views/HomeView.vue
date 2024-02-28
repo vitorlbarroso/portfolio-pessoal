@@ -241,6 +241,19 @@ export default {
             this.modalError.title = "";
             this.modalError.description = "";
         },
+        downloadCV() {
+            const link = document.createElement('a');
+            // Define o atributo 'href' do elemento 'a' com o caminho para o arquivo
+            link.href = 'https://cdn.discordapp.com/attachments/890042596112601120/1212372188297171014/cv_vitorbarroso.pdf?ex=65f19896&is=65df2396&hm=b99f3ed487d3145ec638737bece1f11df069d7044f88cf8116fc30d562a24474&'; // Substitua com o caminho real do arquivo
+            // Define o atributo 'download' para que o navegador faça o download ao invés de navegar para o link
+            link.download = 'cv_vitorbarroso.pdf'; // Substitua com a extensão real do arquivo
+            // Adiciona o elemento 'a' ao documento
+            document.body.appendChild(link);
+            // Simula um clique no link para iniciar o download
+            link.click();
+            // Remove o elemento 'a' do documento
+            document.body.removeChild(link);
+        },
     },
     components: { Button, TabsInfos, ProjectCard, HoverExperiences, Footer, ModalError, ModalContact },
 }
@@ -263,7 +276,7 @@ export default {
 
                 <p>Com experiência em desenvolvimento Front-end, Back-end, UI/UX e DevOps, estou a mais de 4 anos transformando e ajudando empresas a alavancarem seus sistemas através da internet.</p>
 
-                <Button text="Baixar CV" type="gradient"></Button>
+                <Button text="Baixar CV" type="gradient" @clickButton="downloadCV"></Button>
                 <Button text="Entrar em contato" type="gray" @clickButton="openModalContact"></Button>
             </article>
 
